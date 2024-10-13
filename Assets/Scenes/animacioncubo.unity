@@ -506,6 +506,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571764430}
   m_Mesh: {fileID: -6968846074178130577, guid: 6448c654563977d478ac1cdabd9c4369, type: 3}
+--- !u!1 &633361620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4549565918233985, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
+  m_PrefabInstance: {fileID: 7737976328972305480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &633361621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 818521959934467899, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
+  m_PrefabInstance: {fileID: 7737976328972305480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &633361622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633361620}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.62041, y: 2.7290833, z: 2.3814945}
+  m_Center: {x: -0.810205, y: 0.86454165, z: 0.16661644}
 --- !u!1001 &857751672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,6 +635,7 @@ GameObject:
   - component: {fileID: 1460754511}
   - component: {fileID: 1460754510}
   - component: {fileID: 1460754513}
+  - component: {fileID: 1460754514}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -729,6 +761,27 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1460754514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460754509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c1fdaad85279f4aa622090b54d5484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 633361621}
+  targetGO: {fileID: 633361620}
+  distance: 5
+  targetDistance: 5
+  zoomSpeed: 2
+  xSpeed: 1000
+  ySpeed: 800
+  yMinLimit: -5
+  yMaxLimit: 80
 --- !u!1001 &2090200567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -841,7 +894,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4549565918233985, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 633361622}
   m_SourcePrefab: {fileID: 100100000, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
