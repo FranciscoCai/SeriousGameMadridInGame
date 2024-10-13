@@ -34,12 +34,12 @@ public class ArigamiMovimiento : MonoBehaviour
         vectorInicial = vector2;
         if (SelectGameObject != null)
         {
-            Vector2 vectorNormal = vector2 * SelectGameObject.transform.forward;
             MovebleObject moveble = SelectGameObject.GetComponent<MovebleObject>();
-            if(moveble != null)
+            if (moveble != null)
             {
-                Vector2 CantidadDeGiro = (vectorInicial - vectorNormal);
-                moveble.gameObject.transform.Rotate(moveble.VectorRotate * Time.deltaTime*CantidadDeGiro);
+                Vector2 vectorNormal = vector2 * moveble.upp;
+                Vector3 CantidadDeGiro = vectorNormal - vectorInicial;
+                moveble.gameObject.transform.Rotate(Time.deltaTime*new Vector3(CantidadDeGiro.y * moveble.VectorRotate.x, CantidadDeGiro.y * moveble.VectorRotate.y, CantidadDeGiro.y * moveble.VectorRotate.z));
                 vectorInicial = vectorNormal;
             }
         }
