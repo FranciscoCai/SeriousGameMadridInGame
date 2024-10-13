@@ -9,7 +9,6 @@ public class PruebaCamara : MonoBehaviour
     public Transform targetTransform;
     public GameObject targetGO; 
     public float distance = 20f;
-    public float targetDistance = 20f; // Distancia del objetivo para hacer zoom  
     public float zoomSpeed = 5f; 
     public float xSpeed = 1000f;
     public float ySpeed = 800f;
@@ -17,7 +16,7 @@ public class PruebaCamara : MonoBehaviour
     public float yMinLimit = -5f;
     public float yMaxLimit = 80f;
 
-
+    private float targetDistance = 20f; // Distancia del objetivo para hacer zoom  
     private float x = 0.0f;
     private float y = 0.0f;
 
