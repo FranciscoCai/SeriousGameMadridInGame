@@ -23,18 +23,24 @@ public class ArigamiMovimiento : MonoBehaviour
     {
 
     }
+
     private void Start()
     {
 
     }
+    public Vector2 vectorInicial;
     void POnLooK(Vector2 vector2)
     {
+        vectorInicial = vector2;
         if (SelectGameObject != null)
         {
+            Vector2 vectorNormal = vector2 * SelectGameObject.transform.forward;
             MovebleObject moveble = SelectGameObject.GetComponent<MovebleObject>();
             if(moveble != null)
             {
-                Debug.Log(moveble);
+                Vector2 CantidadDeGiro = (vectorInicial - vectorNormal);
+                moveble.gameObject.transform.Rotate(moveble.VectorRotate * Time.deltaTime*CantidadDeGiro);
+                vectorInicial = vectorNormal;
             }
         }
     }
