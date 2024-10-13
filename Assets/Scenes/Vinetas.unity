@@ -509,7 +509,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f9aaacb437e483c4fb86e3a987ec5e36, type: 3}
   - {fileID: 21300000, guid: a3ea708bd7128ee45a423cbbd9b9a7ea, type: 3}
   panelImage: {fileID: 1936950354}
-  PruebaJesus: Prueba Jesus
+  Nivel: Prueba Jesus
 --- !u!114 &1936950354
 MonoBehaviour:
   m_ObjectHideFlags: 0

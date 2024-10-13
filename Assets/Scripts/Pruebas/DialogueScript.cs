@@ -8,7 +8,7 @@ public class DialogueScript : MonoBehaviour
 
     public string[] lines;
 
-    public float textSpeed = 0.1f;
+    public float textSpeed = 0.07f;
 
     int index;
 
@@ -35,6 +35,7 @@ public class DialogueScript : MonoBehaviour
                 dialogueText.text = lines[index];
             }
         }
+        
     }
 
     public void StartDialogue()
@@ -42,7 +43,7 @@ public class DialogueScript : MonoBehaviour
         index = 0;
         StartCoroutine(WriteLine());
     }
-
+    
     IEnumerator WriteLine()
     {
         foreach (char letter in lines[index].ToCharArray())

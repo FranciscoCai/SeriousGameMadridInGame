@@ -12,7 +12,7 @@ public class CambiarVineta : MonoBehaviour
 
     public Image panelImage;
 
-    public string PruebaJesus;
+    public string Nivel;
 
     int index;
 
@@ -39,7 +39,7 @@ public class CambiarVineta : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(PruebaJesus);
+            SceneManager.LoadScene(Nivel);
         }
     }
 }

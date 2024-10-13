@@ -174,7 +174,7 @@ MonoBehaviour:
   - "Franisco Cai Caudillo de Espa\xF1a"
   - "General\xEDsimo de todos los ej\xE9rcitos"
   - Y chino
-  textSpeed: 0.1
+  textSpeed: 0.07
 --- !u!114 &336346378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &529192550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +691,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c24621f904f6b944afabfa8888bc9c1, type: 3}
   - {fileID: 21300000, guid: f9aaacb437e483c4fb86e3a987ec5e36, type: 3}
   panelImage: {fileID: 1254276972}
+  Nivel: 
 --- !u!114 &1254276972
 MonoBehaviour:
   m_ObjectHideFlags: 0

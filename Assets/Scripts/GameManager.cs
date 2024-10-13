@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             {
                 if(i == ToCheck.Count - 1)
                 {
-                    Debug.Log(1111111);
+                   
                 }
             }
             else
