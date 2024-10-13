@@ -8,16 +8,15 @@ public class PruebaCamara : MonoBehaviour
 {
     public Transform targetTransform;
     public GameObject targetGO; 
-    public float distance = 5f;
-    public float targetDistance = 5f; // Distancia del objetivo para hacer zoom  
-    public float zoomSpeed = 2f; 
+    public float distance = 20f;
+    public float zoomSpeed = 5f; 
     public float xSpeed = 1000f;
     public float ySpeed = 800f;
 
     public float yMinLimit = -5f;
     public float yMaxLimit = 80f;
 
-
+    private float targetDistance = 20f; // Distancia del objetivo para hacer zoom  
     private float x = 0.0f;
     private float y = 0.0f;
 
@@ -34,14 +33,14 @@ public class PruebaCamara : MonoBehaviour
         {
             if (targetGO == GetClickedObject(out RaycastHit hit))
             {
-                targetDistance = 2f;
+                targetDistance = 2f; // distancia zoom cuanto menos, más cerca
             }
             
         }
 
         if (Input.GetMouseButton(1))
         {
-            targetDistance = 5f;   
+            targetDistance = 5f; // destancia sin zoom  
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
