@@ -26,6 +26,8 @@ public class ArigamiMovimiento : MonoBehaviour
         input.onStopAttack -= EndAttack;
     }
     public Vector2 vectorInicial;
+    public float MForce;
+    public float ForceEfect;
     void POnLooK(Vector2 vector2)
     {
         vectorInicial = vector2;
@@ -37,9 +39,9 @@ public class ArigamiMovimiento : MonoBehaviour
                 Vector2 vectorNormal = vector2 * moveble.upp;
                 Vector3 CantidadDeGiro = (vectorNormal - vectorInicial);
 
-                if(CantidadDeGiro.y < -13f)
+                if(CantidadDeGiro.y < -MForce)
                 {
-                    CantidadDeGiro.y = -11f;
+                    CantidadDeGiro.y = -ForceEfect;
                 }
                 moveble.gameObject.transform.Rotate(Time.deltaTime*new Vector3(CantidadDeGiro.y * moveble.VectorRotate.x, CantidadDeGiro.y * moveble.VectorRotate.y, CantidadDeGiro.y * moveble.VectorRotate.z));
                 vectorInicial = vectorNormal;
