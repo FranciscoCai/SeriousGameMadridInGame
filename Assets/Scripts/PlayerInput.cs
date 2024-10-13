@@ -23,7 +23,7 @@ public class PlayerInput : ScriptableObject, InputSystem_Actions.IPlayerOnGameAc
 
     public void OnMove(InputAction.CallbackContext context)
     {
-
+        onMove.Invoke(context.ReadValue<Vector2>());
     }
 
     private void OnEnable()

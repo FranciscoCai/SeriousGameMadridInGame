@@ -17,13 +17,12 @@ public class PruebaCamara : MonoBehaviour
     public float yMinLimit = -5f;
     public float yMaxLimit = 80f;
 
-    // Almacenan los valores de rotación. Luego se les pasará a la cámara para que haga cosas guays :) (Girar).
+
     private float x = 0.0f;
     private float y = 0.0f;
 
     private void Start()
     {
-        // Recoge el ángulo de rotación incial de la cámara y se lo pasa a los floats "x" e "y".  
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
@@ -46,20 +45,20 @@ public class PruebaCamara : MonoBehaviour
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
-            // Limita el ángulo Y dentro de los límites definidos para que no atraviese la mesa.  
+
             y = ClampAngle(y, yMinLimit, yMaxLimit);
         }
 
         // Pa q el zoom sea smooth.
         distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
 
-        // Calcula la rotación en función a los ángulos x e y.
+
         Quaternion rotation = Quaternion.Euler(y, x, 0);
 
-        // Calcula la posición y rotación de la cámara.
+
         Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
 
-        // Aplica la rotación y posición a la cámara.
+
         transform.rotation = rotation;
         transform.position = position;
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovebleObject : MonoBehaviour
 {
-    [SerializeField] private GameObject m_Object;
+    [SerializeField] private Vector3 VectorRotate;
     void Start()
     {
         
