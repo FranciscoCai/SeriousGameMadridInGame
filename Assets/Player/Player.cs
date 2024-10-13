@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform laserOrigin;
     private float gunRange = 50f;
 
-    [SerializeField] private PlayerInput input;
+    [SerializeField] private InputActions input;
 
 
     void Awake()

@@ -38,15 +38,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""3140d25a-021b-47d2-8de3-039f3078c1cb"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
@@ -87,39 +78,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Joystick"",
                     ""action"": ""Look"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5fedd299-7e30-4bae-a950-a77449d94cb2"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2d2af79e-af4f-4f92-bad4-9c9f0f5e9d11"",
-                    ""path"": ""<Pointer>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse;Touch"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d74fc672-c3e0-4975-893f-e39ca84c273a"",
-                    ""path"": ""<Joystick>/{Hatswitch}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -774,7 +732,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // PlayerOnGame
         m_PlayerOnGame = asset.FindActionMap("PlayerOnGame", throwIfNotFound: true);
         m_PlayerOnGame_Look = m_PlayerOnGame.FindAction("Look", throwIfNotFound: true);
-        m_PlayerOnGame_Move = m_PlayerOnGame.FindAction("Move", throwIfNotFound: true);
         m_PlayerOnGame_Attack = m_PlayerOnGame.FindAction("Attack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -856,14 +813,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerOnGame;
     private List<IPlayerOnGameActions> m_PlayerOnGameActionsCallbackInterfaces = new List<IPlayerOnGameActions>();
     private readonly InputAction m_PlayerOnGame_Look;
-    private readonly InputAction m_PlayerOnGame_Move;
     private readonly InputAction m_PlayerOnGame_Attack;
     public struct PlayerOnGameActions
     {
         private @InputSystem_Actions m_Wrapper;
         public PlayerOnGameActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Look => m_Wrapper.m_PlayerOnGame_Look;
-        public InputAction @Move => m_Wrapper.m_PlayerOnGame_Move;
         public InputAction @Attack => m_Wrapper.m_PlayerOnGame_Attack;
         public InputActionMap Get() { return m_Wrapper.m_PlayerOnGame; }
         public void Enable() { Get().Enable(); }
@@ -877,9 +832,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
@@ -890,9 +842,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
@@ -1079,7 +1028,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IPlayerOnGameActions
     {
         void OnLook(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
     }
     public interface IUIActions

@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class ArigamiMovimiento : MonoBehaviour
 {
- 
 
-    [SerializeField] private PlayerInput input;
 
+    [SerializeField] private InputActions input;
+    [SerializeField] private GameObject SelectGameObject;
 
     void Awake()
     {
-
+        input.EnableGameplayInputs();
 
     }
 
     // Update is called once per frame
     void OnEnable()
     {
-
+        input.onLook += POnLooK;
+        input.onStopAttack += EndAttack;
     }
     private void OnDisable()
     {
@@ -26,25 +27,35 @@ public class ArigamiMovimiento : MonoBehaviour
     {
 
     }
-
+    void POnLooK(Vector2 vector2)
+    {
+        if (SelectGameObject != null)
+        {
+            MovebleObject moveble = SelectGameObject.GetComponent<MovebleObject>();
+            if(moveble != null)
+            {
+                Debug.Log(moveble);
+            }
+        }
+    }
+    void EndAttack()
+    {
+        SelectGameObject = null;
+    }
     void Update()
     {
 
-            // Crea un rayo desde la c¨¢mara hacia la posici¨®n del mouse en la pantalla
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            // Lanza el raycast y verifica si golpea alg¨²n objeto en la escena
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Input.GetMouseButtonDown(0))
+        {
             if (Physics.Raycast(ray, out hit))
             {
-                // Si el raycast golpea algo, imprime el nombre del objeto golpeado
-                Debug.Log("Golpe¨®: " + hit.collider.name);
 
-                // Puedes acceder a la posici¨®n del punto de impacto
                 Vector3 hitPoint = hit.point;
-                Debug.Log("Punto de impacto: " + hitPoint);
-                Destroy(hit.transform.gameObject);
+                SelectGameObject = hit.transform.gameObject;
             }
+        }
 
     }
 }
