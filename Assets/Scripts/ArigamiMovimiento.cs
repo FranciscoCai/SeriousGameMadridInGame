@@ -37,7 +37,7 @@ public class ArigamiMovimiento : MonoBehaviour
             if (moveble != null)
             {
                 Vector2 vectorNormal = vector2 * moveble.upp;
-                Vector3 CantidadDeGiro = (vectorNormal - vectorInicial);
+                Vector3 CantidadDeGiro = (vectorNormal - vectorInicial)*10;
 
                 if(CantidadDeGiro.y < -MForce)
                 {
