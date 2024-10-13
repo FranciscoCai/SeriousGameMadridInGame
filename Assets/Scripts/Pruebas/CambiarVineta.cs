@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class CambiarVineta : MonoBehaviour
 {
@@ -8,6 +11,8 @@ public class CambiarVineta : MonoBehaviour
     public Sprite[] panels;
 
     public Image panelImage;
+
+    public string PruebaJesus;
 
     int index;
 
@@ -34,7 +39,7 @@ public class CambiarVineta : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(PruebaJesus);
         }
     }
 }
