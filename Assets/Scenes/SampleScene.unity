@@ -525,6 +525,9 @@ MonoBehaviour:
   input: {fileID: 11400000, guid: fd1831eefa293244f9bd02ca392b3282, type: 2}
   SelectGameObject: {fileID: 0}
   vectorInicial: {x: 0, y: 0}
+  MrandomForce:
+  - -25
+  - 50
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
