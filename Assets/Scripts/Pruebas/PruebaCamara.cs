@@ -8,7 +8,7 @@ public class PruebaCamara : MonoBehaviour
 {
     public Transform targetTransform;
     public GameObject targetGO; 
-    public float distance = 20f;
+    public float distance = 5f; //Tiene que ser igual al target distance
     public float zoomSpeed = 5f; 
     public float xSpeed = 1000f;
     public float ySpeed = 800f;
@@ -16,7 +16,7 @@ public class PruebaCamara : MonoBehaviour
     public float yMinLimit = -5f;
     public float yMaxLimit = 80f;
 
-    private float targetDistance = 20f; // Distancia del objetivo para hacer zoom  
+    private float targetDistance = 5f; // Distancia del objetivo para hacer zoom  
     private float x = 0.0f;
     private float y = 0.0f;
 
@@ -25,6 +25,14 @@ public class PruebaCamara : MonoBehaviour
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
+
+
+        Quaternion rotation = Quaternion.Euler(y, x, 0);
+
+
+        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
+
+        transform.position = position;
     }
 
     private void Update()
@@ -40,7 +48,7 @@ public class PruebaCamara : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            targetDistance = 5f; // destancia sin zoom  
+            targetDistance = 5f; // distancia sin zoom  
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
