@@ -41,14 +41,14 @@ public class PruebaCamara : MonoBehaviour
         {
             if (targetGO == GetClickedObject(out RaycastHit hit))
             {
-                targetDistance = 1f; // distancia zoom cuanto menos, más cerca
+                targetDistance = 2f; // distancia zoom cuanto menos, más cerca
             }
             
         }
 
         if (Input.GetMouseButton(1))
         {
-            targetDistance = 2f; // distancia sin zoom  
+            targetDistance = 5f; // distancia sin zoom  
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
