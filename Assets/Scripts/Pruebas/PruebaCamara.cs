@@ -7,7 +7,12 @@ using UnityEngine.EventSystems;
 public class PruebaCamara : MonoBehaviour
 {
     public Transform targetTransform;
-    public GameObject targetGO; 
+    public Transform cameraPositionOne;
+    public GameObject targetGO;
+
+    public bool condicion = false;
+
+
     public float distance = 5f; //Tiene que ser igual al target distance
     public float zoomSpeed = 5f; 
     public float xSpeed = 1000f;
@@ -41,22 +46,34 @@ public class PruebaCamara : MonoBehaviour
         {
             if (targetGO == GetClickedObject(out RaycastHit hit))
             {
-                targetDistance = 0.6f; // distancia zoom cuanto menos, más cerca
+                gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, cameraPositionOne.position, 0.2f);
+                //transform.position = cameraPositionOne.position;
+                transform.rotation = cameraPositionOne.rotation;
+
+                condicion = true;
+
+                // targetDistance = 0.7f; // distancia zoom cuanto menos, más cerca
+
             }
             
         }
 
         if (Input.GetMouseButton(1))
         {
-            targetDistance = 1.1f; // distancia sin zoom  
+            //targetDistance = 1.1f; // distancia sin zoom  
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
+
+            condicion = false;
         }
 
-        // Pa q el zoom sea smooth.
+       
+        if( condicion == false)
+        { 
+
         distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
 
 
@@ -68,6 +85,8 @@ public class PruebaCamara : MonoBehaviour
 
         transform.rotation = rotation;
         transform.position = position;
+
+        }
     }
 
     // Hace el coso pa que no atraviese la mesa (q sino queda feo y tal).
