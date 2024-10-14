@@ -531,7 +531,7 @@ MonoBehaviour:
   panels:
   - {fileID: 21300000, guid: 89c74f0fa4a800241a817e1a4ca331b1, type: 3}
   - {fileID: 21300000, guid: c8e67a3fb9b9d2549b7f55799c1ab628, type: 3}
-  - {fileID: 21300000, guid: 6c24621f904f6b944afabfa8888bc9c1, type: 3}
+  - {fileID: 21300000, guid: 8f74e1ee8957c534899d0fbdba2d2588, type: 3}
   - {fileID: 21300000, guid: f9aaacb437e483c4fb86e3a987ec5e36, type: 3}
   - {fileID: 21300000, guid: a3ea708bd7128ee45a423cbbd9b9a7ea, type: 3}
   panelImage: {fileID: 1936950354}

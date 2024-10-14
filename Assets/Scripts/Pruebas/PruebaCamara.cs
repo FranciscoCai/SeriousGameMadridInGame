@@ -16,7 +16,7 @@ public class PruebaCamara : MonoBehaviour
     public float yMinLimit = -5f;
     public float yMaxLimit = 80f;
 
-    private float targetDistance = 5f; // Distancia del objetivo para hacer zoom  
+    private float targetDistance = 1.1f; // Distancia del objetivo para hacer zoom  
     private float x = 0.0f;
     private float y = 0.0f;
 
