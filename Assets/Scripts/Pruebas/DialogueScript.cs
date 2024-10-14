@@ -5,48 +5,95 @@ using System.Collections;
 public class DialogueScript : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public GameObject dialoguePanel;
 
-    public string[] lines;
+    public string[] linesOne;
+    public string[] linesTwo;
+    public string[] linesThree;
 
-    public float textSpeed = 0.07f;
+    public float textSpeed = 0.05f;
+
+    public bool condicionOne = false; //Si quieres poner más condiciones solo tienes que añadir mas y repetir todo el puto proceso q hay aqui
+
+    private CanvasGroup canvasGroup;
+
+    private bool alreadyCleared = false;
 
     int index;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dialogueText.text = string.Empty;
-        StartDialogue();
+        StartDialogueOne();
+         canvasGroup = dialoguePanel.GetComponent<CanvasGroup>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(condicionOne == true && !alreadyCleared)
+        {
+            dialogueText.text = string.Empty;
+            StartDialogueTwo();
+            canvasGroup.alpha = 1;
+
+            alreadyCleared = true;
+        }
         if(Input.GetMouseButtonDown(0))
         {
-            if (dialogueText.text == lines[index])
+            if (dialogueText.text == linesOne[index])
             {
-                NextLine();
+                NextLineOne();
             }
             else
             {
-                StopAllCoroutines();
-                dialogueText.text = lines[index];
+                StopCoroutine(WriteLineOne());
+
+                //dialogueText.text = linesOne[index];
+
             }
         }
-        
+        if (Input.GetMouseButtonDown(0) && condicionOne == true)
+        {
+            if (dialogueText.text == linesTwo[index])
+            {
+                NextLineTwo();
+            }
+            else
+            {
+                StopCoroutine(WriteLineTwo());
+                
+                //dialogueText.text = linesTwo[index];
+            }
+        }
+
     }
 
-    public void StartDialogue()
+    public void StartDialogueOne()
     {
         index = 0;
-        StartCoroutine(WriteLine());
+        StartCoroutine(WriteLineOne());
     }
-    
-    IEnumerator WriteLine()
+    public void StartDialogueTwo()
     {
-        foreach (char letter in lines[index].ToCharArray())
+        index = 0;
+        StartCoroutine(WriteLineTwo());
+    }
+
+    IEnumerator WriteLineOne()
+    {
+        foreach (char letter in linesOne[index].ToCharArray())
+        {
+            dialogueText.text += letter;
+
+            yield return new WaitForSeconds(textSpeed);
+        }
+
+    }
+    IEnumerator WriteLineTwo()
+    {
+        foreach (char letter in linesTwo[index].ToCharArray())
         {
             dialogueText.text += letter;
 
@@ -55,17 +102,30 @@ public class DialogueScript : MonoBehaviour
 
     }
 
-    public void NextLine()
+    public void NextLineOne()
     {
-        if(index < lines.Length - 1)
+        if(index < linesOne.Length - 1)
         {
             index++;
             dialogueText.text = string.Empty;
-            StartCoroutine(WriteLine());
+            StartCoroutine(WriteLineOne());
         }
         else
         {
-            gameObject.SetActive(false);
+            canvasGroup.alpha = 0;
+        }
+    }
+    public void NextLineTwo()
+    {
+        if (index < linesTwo.Length - 1)
+        {
+            index++;
+            dialogueText.text = string.Empty;
+            StartCoroutine(WriteLineTwo());
+        }
+        else
+        {
+            canvasGroup.alpha = 0;
         }
     }
 }

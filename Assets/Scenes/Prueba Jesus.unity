@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 336346379}
   - component: {fileID: 336346378}
   - component: {fileID: 336346377}
+  - component: {fileID: 336346380}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -170,11 +171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 985856578}
-  lines:
-  - "Franisco Cai Caudillo de Espa\xF1a"
+  dialoguePanel: {fileID: 336346375}
+  linesOne:
+  - "Francisco Cai, Caudillo de Espa\xF1a"
   - "General\xEDsimo de todos los ej\xE9rcitos"
   - Y chino
-  textSpeed: 0.07
+  linesTwo:
+  - Wawawawawa
+  - wa
+  linesThree: []
+  textSpeed: 0.05
+  condicionOne: 0
+  condicionTwo: 0
 --- !u!114 &336346378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +221,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336346375}
   m_CullTransparentMesh: 1
+--- !u!225 &336346380
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336346375}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &529192549
 GameObject:
   m_ObjectHideFlags: 0
