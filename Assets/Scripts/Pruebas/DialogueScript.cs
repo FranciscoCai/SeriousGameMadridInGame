@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DialogueScript : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public GameObject dialoguePanel;
+
+    public Image panel;
 
     public string[] linesOne;
     public string[] linesTwo;
@@ -38,6 +41,8 @@ public class DialogueScript : MonoBehaviour
             canvasGroup.alpha = 1;
 
             alreadyCleared = true;
+
+            panel.gameObject.SetActive(true);
         }
         if(Input.GetMouseButtonDown(0) && condicionOne == false)
         {
@@ -112,6 +117,7 @@ public class DialogueScript : MonoBehaviour
         else
         {
             canvasGroup.alpha = 0;
+            panel.gameObject.SetActive(false);
         }
     }
     public void NextLineTwo()
@@ -125,6 +131,7 @@ public class DialogueScript : MonoBehaviour
         else
         {
             canvasGroup.alpha = 0;
+            panel.gameObject.SetActive(false);
         }
     }
 }
