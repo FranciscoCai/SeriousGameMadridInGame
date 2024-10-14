@@ -9,7 +9,6 @@ public class DialogueScript : MonoBehaviour
 
     public string[] linesOne;
     public string[] linesTwo;
-    public string[] linesThree;
 
     public float textSpeed = 0.05f;
 

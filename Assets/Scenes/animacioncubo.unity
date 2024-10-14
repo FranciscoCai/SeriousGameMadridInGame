@@ -2119,11 +2119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 633361621}
   targetGO: {fileID: 633361620}
-  distance: 20
+  distance: 5
   zoomSpeed: 4
   xSpeed: 1000
   ySpeed: 800
-  yMinLimit: 0
+  yMinLimit: 30
   yMaxLimit: 80
 --- !u!1001 &1506174562
 PrefabInstance:
@@ -2670,15 +2670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 818521959934467899, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.717487
+      value: -11.549
       objectReference: {fileID: 0}
     - target: {fileID: 818521959934467899, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 1.939
       objectReference: {fileID: 0}
     - target: {fileID: 818521959934467899, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.29033
+      value: 14.974
       objectReference: {fileID: 0}
     - target: {fileID: 818521959934467899, guid: 09395b63c8cded9408edd41273a41ff9, type: 3}
       propertyPath: m_LocalRotation.w
