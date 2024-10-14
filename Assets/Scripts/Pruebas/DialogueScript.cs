@@ -39,18 +39,18 @@ public class DialogueScript : MonoBehaviour
 
             alreadyCleared = true;
         }
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && condicionOne == false)
         {
             if (dialogueText.text == linesOne[index])
             {
                 NextLineOne();
+
             }
             else
             {
-                StopCoroutine(WriteLineOne());
-
-                //dialogueText.text = linesOne[index];
-
+                StopAllCoroutines();
+               // StopCoroutine(WriteLineOne());
+                dialogueText.text = linesOne[index];
             }
         }
         if (Input.GetMouseButtonDown(0) && condicionOne == true)
@@ -61,9 +61,9 @@ public class DialogueScript : MonoBehaviour
             }
             else
             {
-                StopCoroutine(WriteLineTwo());
-                
-                //dialogueText.text = linesTwo[index];
+                StopAllCoroutines();
+                dialogueText.text = linesTwo[index];
+                //StopCoroutine(WriteLineTwo());
             }
         }
 
