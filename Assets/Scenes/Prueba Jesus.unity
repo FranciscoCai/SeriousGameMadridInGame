@@ -1381,7 +1381,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 774052845}
   cameraPositionOne: {fileID: 533076281}
-  targetGO: {fileID: 533076277}
+  cameraPositionTwo: {fileID: 0}
+  cameraPositionThree: {fileID: 0}
+  cameraPositionFour: {fileID: 0}
+  targetGOOne: {fileID: 0}
+  targetGOTwo: {fileID: 0}
+  targetGOThree: {fileID: 0}
+  targetGOFour: {fileID: 0}
   condicion: 0
   conditionTwo: 1
   distance: 5

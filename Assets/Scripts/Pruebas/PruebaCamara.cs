@@ -16,6 +16,8 @@ public class PruebaCamara : MonoBehaviour
     public GameObject targetGOThree;
     public GameObject targetGOFour;
 
+    public Texture2D cursorTexture;
+
     public bool condicion = false;
     public bool conditionTwo = true;
 
@@ -32,8 +34,13 @@ public class PruebaCamara : MonoBehaviour
     private float x = 0.0f;
     private float y = 0.0f;
 
+    Vector2 hotspot = Vector2.zero; // Adjust if needed
+    CursorMode cursorMode = CursorMode.Auto;
+
     private void Start()
     {
+        Cursor.SetCursor(cursorTexture, hotspot, cursorMode);
+
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;

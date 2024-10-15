@@ -14,6 +14,8 @@ public class CambiarVineta : MonoBehaviour
 
     public string Nivel;
 
+    public string Menu;
+
     int index;
  
     // Update is called once per frame
@@ -45,6 +47,10 @@ public class CambiarVineta : MonoBehaviour
         {
             index--;
             panelImage.sprite = panels[index];
-        }     
+        }
+        else
+        {
+            SceneManager.LoadScene(Menu);
+        }
     }
 }
