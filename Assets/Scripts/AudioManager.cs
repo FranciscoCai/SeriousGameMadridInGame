@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
             else
             {
                 currentClipIndex = 0; // Vuelve al primer clip si es el último.
+
             }
             
 
