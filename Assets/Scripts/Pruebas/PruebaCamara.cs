@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class PruebaCamara : MonoBehaviour
@@ -14,7 +13,7 @@ public class PruebaCamara : MonoBehaviour
 
 
     public float distance = 5f; //Tiene que ser igual al target distance
-    public float zoomSpeed = 5f; 
+    public float zoomSpeed = 5f;
     public float xSpeed = 1000f;
     public float ySpeed = 800f;
 
@@ -46,16 +45,15 @@ public class PruebaCamara : MonoBehaviour
         {
             if (targetGO == GetClickedObject(out RaycastHit hit))
             {
-                gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, cameraPositionOne.position, 0.2f);
+                StartCoroutine(CloseCamera(cameraPositionOne.position,cameraPositionOne.rotation));
                 //transform.position = cameraPositionOne.position;
-                transform.rotation = cameraPositionOne.rotation;
 
                 condicion = true;
 
                 // targetDistance = 0.7f; // distancia zoom cuanto menos, más cerca
 
             }
-            
+
         }
 
         if (Input.GetMouseButton(1))
@@ -70,25 +68,33 @@ public class PruebaCamara : MonoBehaviour
             condicion = false;
         }
 
-       
-        if( condicion == false)
-        { 
 
-        distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
+        if (condicion == false)
+        {
 
-
-        Quaternion rotation = Quaternion.Euler(y, x, 0);
+            distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
 
 
-        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
+            Quaternion rotation = Quaternion.Euler(y, x, 0);
 
 
-        transform.rotation = rotation;
-        transform.position = position;
+            Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
+
+
+            transform.rotation = rotation;
+            transform.position = position;
 
         }
     }
-
+    private IEnumerator CloseCamera(Vector3 finalPosition,Quaternion finalRotation)
+    {
+        while (finalPosition != gameObject.transform.position&& finalRotation != gameObject.transform.rotation)
+        {
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.02f);
+            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.02f);
+            yield return null;
+        }
+    }
     // Hace el coso pa que no atraviese la mesa (q sino queda feo y tal).
     float ClampAngle(float angle, float min, float max)
     {

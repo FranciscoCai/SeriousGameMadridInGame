@@ -30,6 +30,7 @@ public class Menu : MonoBehaviour
     public void click_Credits()
     {
         creditsInformation.SetActive(true);
+        gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, gameObject.transform.position, 1);
         ActiveFalse();
     }
     public void return_Menu()
