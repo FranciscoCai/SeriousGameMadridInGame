@@ -51,71 +51,58 @@ public class PruebaCamara : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // Primer target
             if (targetGOOne == GetClickedObject(out RaycastHit hit))
             {
-                StartCoroutine(CloseCamera(cameraPositionOne.position,cameraPositionOne.rotation));
-                //transform.position = cameraPositionOne.position;
-
+                StartCoroutine(CloseCamera(cameraPositionOne.position, cameraPositionOne.rotation));
                 condicion = true;
-
-                // targetDistance = 0.7f; // distancia zoom cuanto menos, más cerca
-
             }
 
+            // Segundo target
+            else if (targetGOTwo == GetClickedObject(out hit))
+            {
+                StartCoroutine(CloseCamera(cameraPositionTwo.position, cameraPositionTwo.rotation));
+                condicion = true;
+            }
+
+            // Tercer target
+            else if (targetGOThree == GetClickedObject(out hit))
+            {
+                StartCoroutine(CloseCamera(cameraPositionThree.position, cameraPositionThree.rotation));
+                condicion = true;
+            }
+
+            // Cuarto target
+            else if (targetGOFour == GetClickedObject(out hit))
+            {
+                StartCoroutine(CloseCamera(cameraPositionFour.position, cameraPositionFour.rotation));
+                condicion = true;
+            }
         }
 
         if (Input.GetMouseButton(1))
         {
-            //targetDistance = 1.1f; // distancia sin zoom  
+            // Movimiento sin zoom con el botón derecho del ratón
             x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
             y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
-
             y = ClampAngle(y, yMinLimit, yMaxLimit);
-
-
-
             condicion = false;
-            
         }
 
-
+        // Si no se ha clicado en un target, se vuelve a la posición por defecto
         if (condicion == false)
         {
             Debug.Log("Guarra");
 
             distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
 
-
             Quaternion rotation = Quaternion.Euler(y, x, 0);
-
-
             Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
-
 
             transform.rotation = rotation;
             transform.position = position;
         }
-        
-       /* if(condicion == false && conditionTwo == false)
-        {
-            Debug.Log("No, guarra t?);
-
-            // Rotación de la cámara u objeto
-            Quaternion rotationTwo = Quaternion.Euler(y, x, 0);
-
-            // Calcula la posición objetivo de la cámara
-            Vector3 targetPositionTwo = rotationTwo * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
-
-            // Interpolación suave de la posición hacia el objetivo
-            Vector3 positionTwo = Vector3.Lerp(transform.position, targetPositionTwo, Time.deltaTime * zoomSpeed);
-
-            // Aplica la rotación y la nueva posición
-            transform.rotation = rotationTwo;
-            transform.position = positionTwo;
-
-            conditionTwo = true;
-        }*/
     }
     private IEnumerator CloseCamera(Vector3 finalPosition,Quaternion finalRotation)
     {

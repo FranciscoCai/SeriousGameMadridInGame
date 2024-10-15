@@ -560,7 +560,6 @@ MonoBehaviour:
   input: {fileID: 11400000, guid: fd1831eefa293244f9bd02ca392b3282, type: 2}
   SelectGameObject: {fileID: 0}
   cam: {fileID: 552226921}
-  xxx: {fileID: 1660645899}
   MovingCam: 0
   vectorInicial: {x: 0, y: 0}
   MForce: 27
