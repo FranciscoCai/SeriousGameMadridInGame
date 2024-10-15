@@ -41,12 +41,12 @@ public class AudioManager : MonoBehaviour
         
         
         
-        /*if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying)
         {
             currentClipIndex = (currentClipIndex + 1) % audioClips.Length;
             audioSource.clip = audioClips[currentClipIndex];
             audioSource.Play();
-        }*/
+        }
     }
     GameObject GetClickedObject(out RaycastHit hit)
     {
