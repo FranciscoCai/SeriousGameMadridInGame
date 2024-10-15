@@ -10,6 +10,7 @@ public class PruebaCamara : MonoBehaviour
     public GameObject targetGO;
 
     public bool condicion = false;
+    public bool conditionTwo = true;
 
 
     public float distance = 5f; //Tiene que ser igual al target distance
@@ -65,12 +66,16 @@ public class PruebaCamara : MonoBehaviour
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
+            StartCoroutine(ReturnCamera(cameraPositionOne.position, cameraPositionOne.rotation));
+
             condicion = false;
+            
         }
 
 
         if (condicion == false)
         {
+            Debug.Log("Guarra");
 
             distance = Mathf.Lerp(distance, targetDistance, Time.deltaTime * zoomSpeed);
 
@@ -83,18 +88,63 @@ public class PruebaCamara : MonoBehaviour
 
             transform.rotation = rotation;
             transform.position = position;
-
         }
+        
+       /* if(condicion == false && conditionTwo == false)
+        {
+            Debug.Log("No, guarra tú");
+
+            // Rotación de la cámara u objeto
+            Quaternion rotationTwo = Quaternion.Euler(y, x, 0);
+
+            // Calcula la posición objetivo de la cámara
+            Vector3 targetPositionTwo = rotationTwo * new Vector3(0.0f, 0.0f, -distance) + targetTransform.position;
+
+            // Interpolación suave de la posición hacia el objetivo
+            Vector3 positionTwo = Vector3.Lerp(transform.position, targetPositionTwo, Time.deltaTime * zoomSpeed);
+
+            // Aplica la rotación y la nueva posición
+            transform.rotation = rotationTwo;
+            transform.position = positionTwo;
+
+            conditionTwo = true;
+        }*/
     }
     private IEnumerator CloseCamera(Vector3 finalPosition,Quaternion finalRotation)
     {
-        while (finalPosition != gameObject.transform.position&& finalRotation != gameObject.transform.rotation)
+ 
+        // Ciclo para interpolar la posición y rotación
+        while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
         {
             gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.02f);
             gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.02f);
             yield return null;
         }
+       
     }
+    private IEnumerator ReturnCamera(Vector3 finalPosition, Quaternion finalRotation)
+    {
+        Vector3 initialPosition = gameObject.transform.position;
+        Quaternion initialRotation = gameObject.transform.rotation;
+
+        // Ciclo para interpolar la posición y rotación
+        while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
+        {
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.02f);
+            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.02f);
+            yield return null;
+        }
+        // Ciclo para interpolar la posición y rotación
+        while (initialPosition != gameObject.transform.position && initialRotation != gameObject.transform.rotation && condicion == false)
+        {
+            Debug.Log("a");
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, initialPosition, 0.02f);
+            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, initialRotation, 0.02f);
+            yield return null;
+        }
+
+    }
+
     // Hace el coso pa que no atraviese la mesa (q sino queda feo y tal).
     float ClampAngle(float angle, float min, float max)
     {
