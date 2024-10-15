@@ -29,13 +29,14 @@ public class AudioManager : MonoBehaviour
             {
                 currentClipIndex++;
                 Debug.Log("Puta");
+                audioSource.clip = audioClips[currentClipIndex];
+                audioSource.Play();
             }
             else
             {
                 currentClipIndex = 0; // Vuelve al primer clip si es el último.
             }
-            audioSource.clip = audioClips[currentClipIndex];
-            audioSource.Play();
+            
 
         }
         

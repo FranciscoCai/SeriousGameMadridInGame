@@ -2321,8 +2321,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programmer:\nJes\xFAs G\xE1lvez, Francisco Cai\n\nGame designer:\nPaula
     Carballo, Sristy Garc\xEDa, Candela Garc\xEDa, Jes\xFAs G\xE1lvez, Francisco
-    Cai\n\n2D Artist:\nCandela Garc\xEDa\n\r\n3D Artist:\nSristy Garc\xEDa, Paula
-    Carballo\r\n"
+    Cai\n\n2D Artist:\nCandela Garc\xEDa, Paula Carballo\n\r\n3D Artist:\nSristy
+    Garc\xEDa, Paula Carballo\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
