@@ -681,7 +681,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.000100002064, y: 0.019966783, z: 0.02}
+  m_Size: {x: 0.002000009, y: 0.019966783, z: 0.02}
   m_Center: {x: -0.000050000297, y: -0.009983388, z: -1.6664303e-10}
 --- !u!1 &250175512
 GameObject:
@@ -1216,7 +1216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430635141067533083, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5430635141067533083, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
       propertyPath: m_LocalScale.z
@@ -1705,7 +1705,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00010000206, y: 0.019721791, z: 0.02}
+  m_Size: {x: 0.002000009, y: 0.019721791, z: 0.02}
   m_Center: {x: 0.000049999704, y: 0.009860897, z: 6.38935e-10}
 --- !u!1 &569945115
 GameObject:
@@ -3006,7 +3006,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019660544, y: 0.00010000087, z: 0.02}
+  m_Size: {x: 0.019660544, y: 0.002000009, z: 0.02}
   m_Center: {x: 0.009830272, y: -0.00005, z: -4.3655746e-11}
 --- !u!23 &1199242853
 MeshRenderer:
@@ -3190,14 +3190,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381374866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2669545, y: 0.87345284, z: -0.20423412, w: 0.3522837}
-  m_LocalPosition: {x: -12.613, y: 3.144, z: 15.589}
+  m_LocalRotation: {x: 0.19150886, y: 0.7817935, z: -0.2888341, w: 0.5183612}
+  m_LocalPosition: {x: -12.386, y: 2.581, z: 15.357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 358054150}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 33.015, y: 142.852, z: 22.615}
+  m_LocalEulerAnglesHint: {x: 40.554, y: 112.908, z: 0}
 --- !u!4 &1399608007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5430635141067533083, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
@@ -3508,8 +3508,8 @@ MonoBehaviour:
   cam: {fileID: 1460754509}
   MovingCam: 0
   vectorInicial: {x: 0, y: 0}
-  MForce: 27
-  ForceEfect: 25
+  MForce: 57
+  ForceEfect: 47
   MrandomForce:
   - -25
   - 40
@@ -3570,7 +3570,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019660544, y: 0.00010000087, z: 0.02}
+  m_Size: {x: 0.019660544, y: 0.002000009, z: 0.02}
   m_Center: {x: 0.009830272, y: -0.00005, z: -4.3655746e-11}
 --- !u!1001 &1506174562
 PrefabInstance:
@@ -3969,7 +3969,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.019660544, y: 0.00010000087, z: 0.02}
+  m_Size: {x: 0.019660544, y: 0.002000009, z: 0.02}
   m_Center: {x: 0.009830274, y: -0.00005, z: -4.3655746e-11}
 --- !u!1 &1869420438
 GameObject:

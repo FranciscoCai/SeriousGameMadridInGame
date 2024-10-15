@@ -21,7 +21,17 @@ public class MovebleObject : MonoBehaviour
     void Update()
     {
         vectorActual = gameObject.transform.rotation.eulerAngles;
-        if(vectorActual.z >= RangeFinal[0] && vectorActual.z <= RangeFinal[1])
+        float vectorActualz;
+        if (vectorActual.z > 345)
+        {
+            vectorActualz = vectorActual.z - 360;
+        }
+        else
+        {
+            vectorActualz = vectorActual.z;
+        }
+
+        if(vectorActualz >= RangeFinal[0] && vectorActualz <= RangeFinal[1])
         {
             PosicionCorrecta =true; 
         }
