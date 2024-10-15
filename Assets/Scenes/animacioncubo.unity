@@ -2589,6 +2589,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dea8877416e706a4a93a2c39b564b66c, type: 3}
   - {fileID: 8300000, guid: 2d9cb41186d681743bd3870efba7d1f5, type: 3}
   - {fileID: 8300000, guid: a11ab172ae12c5747b79d4be2dfc946c, type: 3}
+  - {fileID: 8300000, guid: dea8877416e706a4a93a2c39b564b66c, type: 3}
   radio: {fileID: 1655036978}
 --- !u!1001 &1506174562
 PrefabInstance:
