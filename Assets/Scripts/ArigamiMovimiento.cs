@@ -91,7 +91,7 @@ public class ArigamiMovimiento : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && MovingCam == false)
+        if (Input.GetMouseButtonDown(0))
         {
             if (Physics.Raycast(ray, out hit))
             {
@@ -101,7 +101,6 @@ public class ArigamiMovimiento : MonoBehaviour
                 if (moveble != null)
                 {
                     StartCoroutine(RandomForce());
-                    StartCoroutine(CloseCamera(SelectGameObject.GetComponent<MovebleObject>().Target.transform.position, SelectGameObject.GetComponent<MovebleObject>().Target.transform.rotation));
                 }
                 }
         }
