@@ -1285,7 +1285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5430635141067533083, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.097
+      value: 2.101
       objectReference: {fileID: 0}
     - target: {fileID: 5430635141067533083, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3275,6 +3275,8 @@ GameObject:
   - component: {fileID: 1460754514}
   - component: {fileID: 1460754516}
   - component: {fileID: 1460754515}
+  - component: {fileID: 1460754517}
+  - component: {fileID: 1460754518}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3546,6 +3548,41 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a11ab172ae12c5747b79d4be2dfc946c, type: 3}
   - {fileID: 8300000, guid: dea8877416e706a4a93a2c39b564b66c, type: 3}
   radio: {fileID: 1655036978}
+--- !u!114 &1460754517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460754509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1466a7cb2cbbbe041b31cd47a2f817ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: fd1831eefa293244f9bd02ca392b3282, type: 2}
+  SelectGameObject: {fileID: 0}
+  cam: {fileID: 1460754509}
+  MovingCam: 0
+  vectorInicial: {x: 0, y: 0}
+  MForce: 27
+  ForceEfect: 25
+  MrandomForce:
+  - -25
+  - 40
+--- !u!114 &1460754518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460754509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19056538b9666f244b07630bd659caa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToCheck: []
 --- !u!1 &1482411950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4620329886507776974, guid: 5897a35fe4c9a664b9da15cc34934c55, type: 3}
