@@ -7,7 +7,14 @@ public class PruebaCamara : MonoBehaviour
 {
     public Transform targetTransform;
     public Transform cameraPositionOne;
-    public GameObject targetGO;
+    public Transform cameraPositionTwo;
+    public Transform cameraPositionThree;
+    public Transform cameraPositionFour;
+
+    public GameObject targetGOOne;
+    public GameObject targetGOTwo;
+    public GameObject targetGOThree;
+    public GameObject targetGOFour;
 
     public bool condicion = false;
     public bool conditionTwo = true;
@@ -44,7 +51,7 @@ public class PruebaCamara : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (targetGO == GetClickedObject(out RaycastHit hit))
+            if (targetGOOne == GetClickedObject(out RaycastHit hit))
             {
                 StartCoroutine(CloseCamera(cameraPositionOne.position,cameraPositionOne.rotation));
                 //transform.position = cameraPositionOne.position;
