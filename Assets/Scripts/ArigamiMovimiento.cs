@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class ArigamiMovimiento : MonoBehaviour
@@ -7,11 +8,12 @@ public class ArigamiMovimiento : MonoBehaviour
 
     [SerializeField] private InputActions input;
     [SerializeField] private GameObject SelectGameObject;
+    [SerializeField] private GameObject cam;
+    public Transform xxx;
 
     void Awake()
     {
         input.EnableGameplayInputs();
-
     }
 
     // Update is called once per frame
@@ -48,6 +50,18 @@ public class ArigamiMovimiento : MonoBehaviour
             }
         }
     }
+    private IEnumerator CloseCamera(Vector3 finalPosition, Quaternion finalRotation)
+    {
+
+        // Ciclo para interpolar la posición y rotación
+        while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, finalPosition, 0.05f);
+            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, finalRotation, 0.05f);
+            yield return null;
+        }
+
+    }
     public float[] MrandomForce;
     private IEnumerator RandomForce()
     {
@@ -78,10 +92,12 @@ public class ArigamiMovimiento : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 SelectGameObject = hit.transform.gameObject;
+               
                 MovebleObject moveble = SelectGameObject.GetComponent<MovebleObject>();
                 if (moveble != null)
                 {
                     StartCoroutine(RandomForce());
+                    StartCoroutine(CloseCamera(SelectGameObject.GetComponent<MovebleObject>().Target.transform.position, SelectGameObject.GetComponent<MovebleObject>().Target.transform.rotation));
                 }
                 }
         }

@@ -66,7 +66,7 @@ public class PruebaCamara : MonoBehaviour
 
             y = ClampAngle(y, yMinLimit, yMaxLimit);
 
-            StartCoroutine(ReturnCamera(cameraPositionOne.position, cameraPositionOne.rotation));
+
 
             condicion = false;
             
@@ -92,7 +92,7 @@ public class PruebaCamara : MonoBehaviour
         
        /* if(condicion == false && conditionTwo == false)
         {
-            Debug.Log("No, guarra tú");
+            Debug.Log("No, guarra t?);
 
             // Rotación de la cámara u objeto
             Quaternion rotationTwo = Quaternion.Euler(y, x, 0);
@@ -116,34 +116,13 @@ public class PruebaCamara : MonoBehaviour
         // Ciclo para interpolar la posición y rotación
         while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
         {
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.02f);
-            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.02f);
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.12f);
+            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.12f);
             yield return null;
         }
        
     }
-    private IEnumerator ReturnCamera(Vector3 finalPosition, Quaternion finalRotation)
-    {
-        Vector3 initialPosition = gameObject.transform.position;
-        Quaternion initialRotation = gameObject.transform.rotation;
-
-        // Ciclo para interpolar la posición y rotación
-        while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
-        {
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, finalPosition, 0.02f);
-            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, finalRotation, 0.02f);
-            yield return null;
-        }
-        // Ciclo para interpolar la posición y rotación
-        while (initialPosition != gameObject.transform.position && initialRotation != gameObject.transform.rotation && condicion == false)
-        {
-            Debug.Log("a");
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, initialPosition, 0.02f);
-            gameObject.transform.rotation = Quaternion.Lerp(gameObject.transform.rotation, initialRotation, 0.02f);
-            yield return null;
-        }
-
-    }
+  
 
     // Hace el coso pa que no atraviese la mesa (q sino queda feo y tal).
     float ClampAngle(float angle, float min, float max)

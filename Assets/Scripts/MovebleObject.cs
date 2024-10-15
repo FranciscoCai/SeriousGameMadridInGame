@@ -8,6 +8,7 @@ public class MovebleObject : MonoBehaviour
     public Vector3 vectorActual;
     public float[] RangeFinal;
     public bool PosicionCorrecta = false;
+    public GameObject Target;
     void Start()
     {
         if(GameManager.instance != null)
