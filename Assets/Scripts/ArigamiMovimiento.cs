@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArigamiMovimiento : MonoBehaviour
@@ -9,7 +10,7 @@ public class ArigamiMovimiento : MonoBehaviour
     [SerializeField] private InputActions input;
     [SerializeField] private GameObject SelectGameObject;
     [SerializeField] private GameObject cam;
-    public Transform xxx;
+    public bool MovingCam = false;
 
     void Awake()
     {
@@ -45,6 +46,10 @@ public class ArigamiMovimiento : MonoBehaviour
                 {
                     CantidadDeGiro.y = -ForceEfect;
                 }
+                if (CantidadDeGiro.y > -5)
+                {
+                    CantidadDeGiro.y = 5;
+                }
                 moveble.gameObject.transform.Rotate(Time.deltaTime*new Vector3(CantidadDeGiro.y * moveble.VectorRotate.x, CantidadDeGiro.y * moveble.VectorRotate.y, CantidadDeGiro.y * moveble.VectorRotate.z));
                 vectorInicial = vectorNormal;
             }
@@ -52,15 +57,14 @@ public class ArigamiMovimiento : MonoBehaviour
     }
     private IEnumerator CloseCamera(Vector3 finalPosition, Quaternion finalRotation)
     {
-
-        // Ciclo para interpolar la posición y rotación
+        MovingCam = true;
         while (finalPosition != gameObject.transform.position && finalRotation != gameObject.transform.rotation)
         {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, finalPosition, 0.05f);
-            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, finalRotation, 0.05f);
+            cam.transform.position = Vector3.Lerp(cam.transform.position, finalPosition, 0.08f/Vector3.Distance(cam.transform.position, finalPosition));
+            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, finalRotation, 0.08f / Vector3.Distance(cam.transform.position, finalPosition));
             yield return null;
         }
-
+        MovingCam = false;
     }
     public float[] MrandomForce;
     private IEnumerator RandomForce()
@@ -87,7 +91,7 @@ public class ArigamiMovimiento : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && MovingCam == false)
         {
             if (Physics.Raycast(ray, out hit))
             {
