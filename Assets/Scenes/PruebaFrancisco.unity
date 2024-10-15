@@ -3061,7 +3061,7 @@ MonoBehaviour:
   start: {fileID: 2098996525}
   information: {fileID: 926550564}
   credits: {fileID: 1111602219}
-  SceneToLoad: 
+  SceneToLoad: Vinetas
   parkinsonInformation: {fileID: 1965512137}
   creditsInformation: {fileID: 1215098968}
   parkinsonInformationText:
