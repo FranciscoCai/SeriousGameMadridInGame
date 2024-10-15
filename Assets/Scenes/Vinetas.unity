@@ -1000,8 +1000,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 967, y: 542}
-  m_SizeDelta: {x: 1980, y: 1767}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 3284.9, y: 1847.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936950354
 MonoBehaviour:
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89c74f0fa4a800241a817e1a4ca331b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5aaeee0a7882c05409384df23833a8ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1054,18 +1054,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panels:
-  - {fileID: 21300000, guid: 89c74f0fa4a800241a817e1a4ca331b1, type: 3}
-  - {fileID: 21300000, guid: c8e67a3fb9b9d2549b7f55799c1ab628, type: 3}
-  - {fileID: 21300000, guid: 8f74e1ee8957c534899d0fbdba2d2588, type: 3}
-  - {fileID: 21300000, guid: 063f152903a73e44785ce5b62a16ed63, type: 3}
-  - {fileID: 21300000, guid: b5efbdb2cb9258c4d97e46f6041e4791, type: 3}
-  - {fileID: 21300000, guid: 2ca7750cf8ff5d84590b95a8ed1d6f25, type: 3}
-  - {fileID: 21300000, guid: ce6226b95548a364eb00db5b4b217c14, type: 3}
-  - {fileID: 21300000, guid: 84a6d3bd510e42e4f892f9c8040031ba, type: 3}
-  - {fileID: 21300000, guid: cec3803288fdbd141905387db11eabac, type: 3}
-  - {fileID: 21300000, guid: 6ed4d5b992ef060418686791df443a42, type: 3}
-  - {fileID: 21300000, guid: 0ed8f4e0ed740fa45867083e9c946f98, type: 3}
-  - {fileID: 21300000, guid: 04b5e5b94c0e05c4694ece265ed763f0, type: 3}
+  - {fileID: 21300000, guid: 5aaeee0a7882c05409384df23833a8ff, type: 3}
+  - {fileID: 21300000, guid: d4d4eaa3f236a1e47bafb6b87a1f964a, type: 3}
+  - {fileID: 21300000, guid: 03213857a0c89ab409f07a7bb165785d, type: 3}
+  - {fileID: 21300000, guid: d2b3e660edb5d024d979560d2f7d89b4, type: 3}
+  - {fileID: 21300000, guid: c1cd424407c0f1d4ead744bbc8090762, type: 3}
+  - {fileID: 21300000, guid: 8ed7a38bea82b634692f319e83887e58, type: 3}
+  - {fileID: 21300000, guid: 4b181a549fa3df34fb2125c626727abe, type: 3}
+  - {fileID: 21300000, guid: e608500e48208a84f84b583bc4aad78b, type: 3}
+  - {fileID: 21300000, guid: 94ab2edbd3b8f934dbd9d9f5420bfd50, type: 3}
+  - {fileID: 21300000, guid: 39f8ca15729153d49aa639adab280c1e, type: 3}
+  - {fileID: 21300000, guid: 217329a83f541c447a2741547e329d1a, type: 3}
+  - {fileID: 21300000, guid: 01ae1965ffd06fe46a11726f0eb10a0c, type: 3}
   panelImage: {fileID: 1936950354}
   Nivel: animacioncubo
   Menu: PruebaFrancisco
