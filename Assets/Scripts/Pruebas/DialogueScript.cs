@@ -57,6 +57,7 @@ public class DialogueScript : MonoBehaviour
                // StopCoroutine(WriteLineOne());
                 dialogueText.text = linesOne[index];
             }
+
         }
         if (Input.GetMouseButtonDown(0) && condicionOne == true)
         {
