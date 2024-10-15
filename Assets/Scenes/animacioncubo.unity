@@ -3525,6 +3525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19056538b9666f244b07630bd659caa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Escena: Menu Principal
   ToCheck: []
 --- !u!1 &1482411950 stripped
 GameObject:

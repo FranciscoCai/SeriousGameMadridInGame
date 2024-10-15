@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public string Escena;
+
     public List<GameObject> ToCheck = new List<GameObject>();
     void Awake()
     {
@@ -30,7 +34,7 @@ public class GameManager : MonoBehaviour
             {
                 if(i == ToCheck.Count - 1)
                 {
-                    Debug.Log("gANA");
+                    SceneManager.LoadScene(Escena);
                 }
             }
             else

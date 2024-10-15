@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PruebaFrancisco.unity
     guid: f344adc4d5c4cd94baa75765126aa289
+  - enabled: 1
+    path: Assets/Scenes/Menu Principal.unity
+    guid: d39913421877c7f4abefd4485fecbdfc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
